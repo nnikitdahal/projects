@@ -1,0 +1,22 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="studies" type="studiesType"/>
+  <xs:complexType name="studyType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="title"/>
+      <xs:element type="xs:string" name="summary" minOccurs="0"/>
+      <xs:element type="xs:string" name="pi"/>
+      <xs:element type="xs:string" name="startDate"/>
+      <xs:element type="xs:string" name="stopDate"/>
+      <xs:element type="xs:string" name="enrollment"/>
+      <xs:element type="xs:string" name="gender"/>
+      <xs:element type="xs:string" name="phase"/>
+      <xs:element type="xs:string" name="site" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="studyID" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="studiesType">
+    <xs:sequence>
+      <xs:element type="studyType" name="study" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
